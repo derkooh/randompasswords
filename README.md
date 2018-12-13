@@ -30,4 +30,4 @@ for i in `seq 0 9`; do
       strongpw >> entropy0$i$j.txt
     done
   done
-done}```
+done}
