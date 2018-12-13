@@ -18,16 +18,16 @@ Bash commands for random passwords
 
 ## Functions
 ### Single Passwords
-* normpw(){ < /dev/random tr -dc _A-Z-a-z-0-9 | head -c${1:-16};echo;}
-* strongpw(){dd if=/dev/random bs=1 count=32 2>/dev/null | base64 -w 0 | rev | cut -b 2- | rev}
+* `normpw(){ < /dev/random tr -dc _A-Z-a-z-0-9 | head -c${1:-16};echo;}`
+* `strongpw(){dd if=/dev/random bs=1 count=32 2>/dev/null | base64 -w 0 | rev | cut -b 2- | rev}`
 
 ### Create Entropy txt Files
 
-mkentropy(){
+```mkentropy(){
 for i in `seq 0 9`; do
   for j in `seq 0 9`; do
     for k in `seq 1 32`; do
       strongpw >> entropy0$i$j.txt
     done
   done
-done}
+done}```
