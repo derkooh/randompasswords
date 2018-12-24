@@ -19,7 +19,7 @@ Bash commands for random passwords
 ## Functions
 ### Single Passwords
 * `normpw(){ < /dev/random tr -dc _A-Z-a-z-0-9 | head -c${1:-16};echo;}`
-* `strongpw(){dd if=/dev/random bs=1 count=32 2>/dev/null | base64 -w 0 | rev | cut -b 2- | rev}`
+* `strongpw(){< /dev/random tr -dc 'A-Za-z0-9!"#$%&'\''()*+,-.<=>?@[\]^_{|}~' | head -c 32  ; echo}`
 
 ### Create Entropy Text Files
 
